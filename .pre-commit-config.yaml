@@ -15,6 +15,7 @@ repos:
         files: ^(src|test)/.*\.py$
       - id: pytest
         name: Run pytest
-        entry: pytest -vvv
+        entry: pytest
         language: system
         types: [python]
+        args: ['--maxfail=1', '--disable-warnings', "-vvv"] 
