@@ -15,3 +15,11 @@ def test_get_hello_world():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"message": "Hello, World!"}
+
+def test_get_health_check():
+    """
+    Test for the `get` method on the route "/health"
+    """
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Health is OK"}
