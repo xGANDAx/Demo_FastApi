@@ -22,6 +22,16 @@ async def hello_world():
     }
 
 
+@app.get("/health", status_code=200)
+async def health():
+    """
+    Method that returns a health message.
+    """
+    return {
+        "message": "Health is OK",
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
 
