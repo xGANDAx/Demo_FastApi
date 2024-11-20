@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pylint
+        name: Run pylint
+        entry: pylint
+        language: system
+        types: [python]
+        files: ^src/  # Opcional: ajusta según la ubicación de tu código.
