@@ -6,6 +6,7 @@ repos:
         entry: pylint
         language: system
         types: [python]
+        files: ^src/ 
       - id: black
         name: Format code with Black
         entry: black
