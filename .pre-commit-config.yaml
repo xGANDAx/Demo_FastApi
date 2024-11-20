@@ -15,6 +15,6 @@ repos:
         files: ^(src|test)/.*\.py$
       - id: pytest
         name: Run pytest
-        entry: pytest
+        entry: pytest -vvv
         language: system
         types: [python]
