@@ -6,4 +6,4 @@ repos:
         entry: pylint
         language: system
         types: [python]
-        files: ./src  # Opcional: ajusta según la ubicación de tu código.
+        files: src  # Opcional: ajusta según la ubicación de tu código.
