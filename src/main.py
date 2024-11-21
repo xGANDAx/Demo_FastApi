@@ -18,7 +18,7 @@ app.include_router(task_router)
 @app.get("/")
 async def hello_world():
     """
-    Method that returns a welcome message
+    Method that returns a welcome message.
     """
     return {
         "message": "Hello, World!",

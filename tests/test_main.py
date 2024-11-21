@@ -18,7 +18,7 @@ def test_get_hello_world():
 
 def test_get_health_check():
     """
-    Test for the `get` method on the route "/health".
+    Test for the `get` method on the route "/health"
     """
     response = client.get("/health")
     assert response.status_code == 200
