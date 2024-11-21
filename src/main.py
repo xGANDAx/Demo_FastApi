@@ -7,15 +7,18 @@ This module contains the following routes:
 """
 
 from fastapi import FastAPI
+from web.tasks import task_router
 
 app = FastAPI()
+
+app.include_router(task_router)
 
 
 @app.get("")
 @app.get("/")
 async def hello_world():
     """
-    Method that returns a welcome message.
+    Method that returns a welcome message
     """
     return {
         "message": "Hello, World!",

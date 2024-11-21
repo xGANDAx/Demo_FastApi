@@ -3,10 +3,10 @@ repos:
     hooks:
       - id: black
         name: Format code with Black
-        entry: ^(src|test)/.*\.py$
+        entry: black
         language: system
         types: [python]
-        files: ^src/ 
+        files: ^(src|test)/.*\.py$
       - id: pylint
         name: Run pylint
         entry: pylint
@@ -18,4 +18,4 @@ repos:
         entry: pytest
         language: system
         types: [python]
-        args: ['--maxfail=1', '--disable-warnings', "-vvv"] 
+        files: ^test
