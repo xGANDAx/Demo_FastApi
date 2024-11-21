@@ -13,8 +13,3 @@ repos:
         language: system
         types: [python]
         files: ^(src|test)/.*\.py$
-      - id: pytest
-        name: Run pytest
-        entry: pytest
-        language: python
-        stages: [push]
