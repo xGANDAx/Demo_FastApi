@@ -7,8 +7,11 @@ This module contains the following routes:
 """
 
 from fastapi import FastAPI
+from web.tasks import task_router
 
 app = FastAPI()
+
+app.include_router(task_router)
 
 
 @app.get("")

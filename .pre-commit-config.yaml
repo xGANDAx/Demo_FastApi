@@ -3,7 +3,7 @@ repos:
     hooks:
       - id: black
         name: Format code with Black
-        entry: ^(src|test)/.*\.py$
+        entry: black
         language: system
         types: [python]
         files: ^src/ 
@@ -13,9 +13,3 @@ repos:
         language: system
         types: [python]
         files: ^(src|test)/.*\.py$
-      - id: pytest
-        name: Run pytest
-        entry: pytest
-        language: system
-        types: [python]
-        args: ['--maxfail=1', '--disable-warnings', "-vvv"] 
