@@ -3,7 +3,6 @@ Module that initializes the database.
 """
 
 import os
-from pathlib import Path
 from sqlite3 import connect, Connection, Cursor
 
 conn: Connection | None = None
@@ -21,12 +20,7 @@ def get_db(name: str | None = None, reset: bool = False):
             return
         conn = None
     if not name:
-        name = os.getenv("CRYPTID_SQLITE_DB")
-        top_dir = Path(__file__).resolve().parents[1]
-        db_dir = top_dir / "db"
-        db_name = "cryptid.db"
-        db_path = str(db_dir / db_name)
-        name = os.getenv("CRYPTID_SQLITE_DB", db_path)
+        name = os.getenv("CRYPTID_SQLITE_DB", ":memory:")
 
     conn = connect(name, check_same_thread=False)
     curs = conn.cursor()
