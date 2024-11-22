@@ -2,11 +2,7 @@
 Module containing the tests for the main application module.
 """
 
-from fastapi.testclient import TestClient
-from main import app
-
-client = TestClient(app)
-
+from .init import client
 
 def test_get_hello_world():
     """
