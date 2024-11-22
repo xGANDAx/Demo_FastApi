@@ -11,6 +11,7 @@ on:
 jobs:
   setup:
     name: Setup Environment
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
