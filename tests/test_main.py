@@ -4,8 +4,12 @@ Module containing the tests for the main application module.
 
 from .init import client
 
-class TestMain() :
 
+class TestMain:
+    """
+    Class that contains the test of the main route.
+    """
+    
     def test_get_hello_world(self):
         """
         Test for the `get` method on the route "/".

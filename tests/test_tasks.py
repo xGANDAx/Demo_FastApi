@@ -6,8 +6,16 @@ from .init import client
 
 
 class TestTasks:
+    """
+    Class that contains the test of the Tasks router.
+    """
 
     task_data = {"name": "test", "description": "test", "status": "test"}
+    task_data_modified = {
+        "name": "test_modified",
+        "description": "test_modified",
+        "status": "active",
+    }
 
     def test_create_task(self):
         """
@@ -32,3 +40,12 @@ class TestTasks:
         response_get = client.get("/tasks")
         assert response_get.status_code == 200
         assert response_get.json() == [self.task_data | {"task_id": 1}]
+
+    def test_edit_task(self):
+        """
+        Test for the `Put` method on the route "/tasks/{id}".
+        """
+        client.post("/tasks", json=self.task_data)
+        response_get = client.put("/tasks/1", json=self.task_data_modified)
+        assert response_get.status_code == 200
+        assert response_get.json() == self.task_data_modified | {"task_id": 1}

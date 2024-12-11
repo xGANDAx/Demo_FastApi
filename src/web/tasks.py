@@ -33,3 +33,11 @@ async def get_all_tasks():
     Function that return a task.
     """
     return service.get_all_task()
+
+
+@task_router.put("/{task_id}", status_code=200)
+async def update_task(task_id, task_info: Task):
+    """
+    Function that update a Task.
+    """
+    return service.update_task(task_id, task_info)
