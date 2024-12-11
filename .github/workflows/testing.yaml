@@ -1,16 +1,13 @@
 name: Testing
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
   setup:
-    name: Setup Environment
+    name: Testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

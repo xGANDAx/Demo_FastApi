@@ -73,3 +73,20 @@ def get_all_task() -> list | None:
         return [row_to_model(row) for row in curs.fetchall()]
 
     return None
+
+
+def update_task(updated_task) -> Task | None:
+    """
+    Function that update a task record.
+    """
+    qry = """update tasks
+    set name=:name, description=:description, status=:status 
+    where id=:task_id"""
+    params = updated_task
+    if curs is not None and conn is not None:
+        curs.execute(qry, params)
+        conn.commit()
+
+        return get_one_task(updated_task["task_id"])
+
+    return None
