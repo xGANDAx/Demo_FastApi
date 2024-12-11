@@ -59,3 +59,17 @@ def get_one_task(task_id) -> Task | None:
         return row_to_model(curs.fetchone())
 
     return None
+
+
+def get_all_task() -> list | None:
+    """
+    Function that returns a task record.
+    """
+    qry = "select * from tasks"
+    if curs is not None and conn is not None:
+        curs.execute(qry)
+        conn.commit()
+
+        return [row_to_model(row) for row in curs.fetchall()]
+
+    return None
