@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Demo_Python_FastApi
+  annotations:
+    github.com/project-slug: xGANDAx/Demo_Python_FastApi
+spec:
+  type: other
+  lifecycle: unknown
+  owner: admin
