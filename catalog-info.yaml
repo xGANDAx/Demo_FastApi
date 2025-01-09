@@ -4,7 +4,7 @@ metadata:
   name: Demo_Python_FastApi
   annotations:
     github.com/project-slug: xGANDAx/Demo_Python_FastApi
-    backstage.io/tehcdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: other
   lifecycle: unknown
